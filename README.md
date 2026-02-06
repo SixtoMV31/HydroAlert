@@ -65,7 +65,7 @@ HydroAlert/
 Clona el repositorio:
 
 ```bash
-git clone https://github.com/TU_USUARIO/HydroAlert.git
+git clone https://github.com/SixtoMV31/HydroAlert.git
 cd HydroAlert
 ```
 
