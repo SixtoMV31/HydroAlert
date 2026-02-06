@@ -21,7 +21,7 @@ Desarrollar un sistema capaz de:
 
 El sistema está compuesto por tres partes principales:
 
-1. **Simulador ESP32**
+1. **ESP32 mostrando datos aleatoreos**
 
    * Simula el envío de datos del sensor de nivel de agua.
    * Envía los valores al servidor mediante WebSockets.
@@ -44,7 +44,6 @@ El sistema está compuesto por tres partes principales:
 HydroAlert/
 ├── app.py                 # Dashboard en Streamlit
 ├── websocket_server.py    # Servidor WebSocket
-├── simulador.py           # Simulador del ESP32
 ├── requirements.txt       # Dependencias del proyecto
 ├── .gitignore             # Archivos ignorados por Git
 └── Sensor_Agua/
@@ -87,25 +86,12 @@ pip install -r requirements.txt
 
 ## ▶️ Uso del sistema
 
-Ejecuta los componentes en el siguiente orden (cada uno en una terminal diferente):
-
-### 1️⃣ Servidor WebSocket
-
-```bash
-python websocket_server.py
-```
-
-### 2️⃣ Simulador del ESP32
-
-```bash
-python simulador.py
-```
-
-### 3️⃣ Dashboard Streamlit
+### 1 Dashboard Streamlit
 
 ```bash
 streamlit run app.py
 ```
+solo es necesario ejecutar esto ya que este archivo ejecuta el esp32_cliente dentro de el
 
 Luego abre el navegador en:
 

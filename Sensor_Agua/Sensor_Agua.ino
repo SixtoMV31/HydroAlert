@@ -1,8 +1,8 @@
 #include "Arduino.h"
 #include "WebSocketsServer.h"
   // definimos constantes para nuestras redes WIFI
-  const char* ssid="TESALIA_LAB";
-  const char* password="tes@li4&";
+  const char* ssid="MOVIL";
+  const char* password="Alumnos25";
 //creamos un objeto de websocket y asignamos el puerto que vamos a usar
 WebSocketsServer websocket= WebSocketsServer(81);
 unsigned long lasAlt=0;
@@ -31,6 +31,11 @@ websocket.onEvent(WebSocketsEvent);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  //aqui activamos el loop para que cada 2 segundos se envien los datos
+  websocket.loop();
+    if (millis()-lasAlt>2000){
+      lasAlt=millis();
+      String json =  "{\"sensor\": " + String(random(1, 30)) + "}";
+      websocket.broadcastTXT(json);
+    }
 }
